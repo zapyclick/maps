@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GBP Post Creator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Roboto+Slab&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h1 class="logo">GBP Post Creator</h1>
+      <nav>
+        <ul>
+          <li><a href="#dashboard" class="active"><span class="material-icons">dashboard</span> Dashboard</a></li>
+          <li><a href="#create"><span class="material-icons">add_circle</span> Criar Post</a></li>
+          <li><a href="#gallery"><span class="material-icons">image</span> Galeria</a></li>
+          <li><a href="#settings"><span class="material-icons">settings</span> Configurações</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main>
+      <section id="dashboard" class="section active">
+        <h2>Bem-vindo ao GBP Post Creator!</h2>
+        <p>Crie posts incríveis para seu Google Business Profile em minutos.</p>
+      </section>
+      <section id="create" class="section">
+        <h2>Criar Novo Post</h2>
+        <div class="form-container">
+          <label for="post-type">Tipo de Post</label>
+          <select id="post-type" aria-label="Tipo de post">
+            <option value="offer">Oferta</option>
+            <option value="event">Evento</option>
+            <option value="update">Atualização</option>
+          </select>
+          <label for="post-theme">Tema do Post</label>
+          <input type="text" id="post-theme" placeholder="Ex.: Promoção de Pizza" aria-label="Tema do post">
+          <label for="target-audience">Público-Alvo</label>
+          <input type="text" id="target-audience" placeholder="Ex.: Famílias locais" aria-label="Público-alvo">
+          <label for="location">Localização</label>
+          <input type="text" id="location" placeholder="Ex.: Av. Principal, 123" aria-label="Localização">
+          <button class="btn" onclick="generateCopy()">Gerar Texto</button>
+          <div id="copy-output" class="copy-output"></div>
+          <label>Imagem</label>
+          <div class="image-options">
+            <input type="text" id="unsplash-query" placeholder="Buscar no Unsplash (ex.: pizza)" aria-label="Busca no Unsplash">
+            <button class="btn" onclick="searchUnsplash()">Buscar Imagem</button>
+            <input type="file" id="local-image" accept="image/*" multiple aria-label="Upload de imagem local">
+            <button class="btn" onclick="generateAIImage()">Gerar com IA</button>
+          </div>
+          <div id="image-preview" class="image-preview"></div>
+          <button class="btn primary" onclick="savePost()">Salvar Post</button>
+          <div id="post-preview" class="post-preview"></div>
+        </div>
+      </section>
+      <section id="gallery" class="section">
+        <h2>Galeria de Posts</h2>
+        <div id="post-gallery" class="post-gallery"></div>
+      </section>
+      <section id="settings" class="section">
+        <h2>Configurações</h2>
+        <label for="business-name">Nome do Negócio</label>
+        <input type="text" id="business-name" placeholder="Ex.: Pizzaria do João" aria-label="Nome do negócio">
+        <label for="business-logo">Logo do Negócio</label>
+        <input type="file" id="business-logo" accept="image/*" aria-label="Upload do logo">
+        <button class="btn" onclick="saveSettings()">Salvar Configurações</button>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
