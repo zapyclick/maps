@@ -4,6 +4,64 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GBP Post Creator</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <nav class="sidebar">
+      <a href="#create-post" class="active">Criar Post</a>
+      <a href="#post-gallery">Galeria</a>
+      <a href="#settings">Configurações</a>
+    </nav>
+    <main>
+      <input type="text" id="unsplash-query" placeholder="Buscar imagens no Unsplash (ex.: coffee)">
+<button class="btn" onclick="searchUnsplash()">Buscar Imagens</button>
+<div id="image-preview"></div>
+      <section id="create-post" class="section active">
+        <h2>Criar Post</h2>
+        <select id="post-type">
+          <option value="offer">Oferta</option>
+          <option value="event">Evento</option>
+          <option value="update">Novidade</option>
+        </select>
+        <input type="text" id="post-theme" placeholder="Tema do post (ex.: Café da Manhã)">
+        <input type="text" id="target-audience" placeholder="Público-alvo (ex.: Amigos)">
+        <input type="text" id="location" placeholder="Localização (ex.: Café Central)">
+        <button class="btn" onclick="generateCopy()">Gerar Texto</button>
+        <div id="copy-output"></div>
+        <input type="text" id="unsplash-query" placeholder="Buscar imagens no Unsplash (ex.: coffee)">
+        <button class="btn" onclick="searchUnsplash()">Buscar Imagens</button>
+        <div id="image-preview"></div>
+        <input type="file" id="local-image" accept="image/*" multiple>
+        <button class="btn" onclick="generateAIImage()">Gerar Imagem com IA</button>
+        <button class="btn" onclick="savePost()">Salvar Post</button>
+      </section>
+      <section id="post-gallery" class="section">
+        <h2>Galeria de Posts</h2>
+        <div id="post-gallery"></div>
+      </section>
+      <section id="settings" class="section">
+        <h2>Configurações</h2>
+        <input type="text" id="business-name" placeholder="Nome do Negócio">
+        <input type="file" id="business-logo" accept="image/*">
+        <button class="btn" onclick="saveSettings()">Salvar Configurações</button>
+      </section>
+      <section id="post-preview" class="section">
+        <h2>Visualizar Post</h2>
+        <div id="post-preview"></div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GBP Post Creator</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Roboto+Slab&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
